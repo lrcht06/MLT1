@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midterm Lab Task 1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="stars"></div>
+  <div id="twinkling"></div>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="assets/ITbgmusic.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <h1 class="clickable">Midterm Lab Task 1: Data Cleaning and Preparation Using EXCEL</h1>
+    <p>This portfolio highlights the application of data normalization and cleaning in a transactional database. The dataset includes several related tables, each structured to optimize data organization and remove redundancy.</p>
+
+    <hr />
+
+    <h2 class="clickable">STEP 1. Data Cleaning Process</h2>
+    <p>Load the raw dataset</p>
+    <p>Adjust column width and height</p>
+    <p>Trim extra spaces and inconsistencies</p>
+    <p>Remove null values and fix "inf" errors</p>
+    <p>Eliminate duplicate records</p>
+
+    <h2 class="clickable">STEP 2. Normalization</h2>
+    <p>Apply First Normal Form (1NF)</p>
+    <p>Split tables according to Second Normal Form (2NF)</p>
+    <p>Implement Third Normal Form (3NF)</p>
+    <p>Structure data into a relational model</p>
+
+    <hr />
+    
+   <h2 class="clickable">STEP 3. Here is the screenshot of my output before i started data cleaning (see screenshot)</h2>
+   <div class="image-column">
+      <img src="images/Turla%20(BC).png" alt="STEP 3. Here is the screenshot of my output before i started data cleaning (see screenshot)" />
+   </div>
+
+    <hr />
+    
+   <h2 class="clickable">STEP 4. Here is the screenshot of my output after I started data cleaning (see screenshot)</h2>
+   <div class="image-column">
+      <img src="images/Turla%20(ADCP).png" alt="STEP 4. Here is the screenshot of my output after I started data cleaning (see screenshot)" />
+   </div>
+
+    <hr />
+
+   <h2 class="clickable">Here is the Physical Data Model</h2>
+   <div class="image-column">
+      <img src="images/Turla%20(ERD).png" alt="Here is the Physical Data Model" />
+   </div>
+     
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      const trail = document.createElement("div");
+      trail.className = "cursor-trail";
+      trail.style.left = `${e.pageX}px`;
+      trail.style.top = `${e.pageY}px`;
+      document.body.appendChild(trail);
+      setTimeout(() => trail.remove(), 1000);
+    });
+
+    document.querySelectorAll(".clickable").forEach(el => {
+      el.addEventListener("click", () => {
+        el.classList.add("clicked");
+        setTimeout(() => el.classList.remove("clicked"), 300);
+      });
+    });
+  </script>
+</body>
+</html>
